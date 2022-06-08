@@ -1,0 +1,487 @@
+<html><head>
+		<meta charset='utf-8'>
+		<meta http-equiv='x-ua-compatible' content='IE=edge'/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+		<title>Fluentmark</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
+
+<style media='screen' type='text/css'>
+/* https://github.com/simonlc/Markdown-CSS/blob/master/markdown.css */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  color: #111;
+  line-height: 1em; }
+
+pre, code, kbd, samp {
+  color: black;
+  font-family: 'courier new', monospace;
+  font-size: 0.98em; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+html {
+  font-size: 100%;
+  overflow-y: scroll; }
+
+body {
+  color: #444;
+  font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+  font-size: 12px;
+  line-height: 1.5em;
+  padding: 1em;
+  margin: auto;
+  max-width: 42em;
+  background: #fefefe; }
+
+a {
+  color: #0645ad;
+  text-decoration: none; }
+  a:visited {
+    color: #0b0080; }
+  a:hover {
+    color: #06e;
+    outline: 0; }
+  a:active {
+    color: #faa700;
+    outline: 0; }
+  a:focus {
+    outline: thin dotted; }
+
+::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: black; }
+
+::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: black; }
+
+a::-moz-selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad; }
+
+a::selection {
+  background: rgba(255, 255, 0, 0.3);
+  color: #0645ad; }
+
+p {
+  margin: 1em 0; }
+
+img {
+  max-width: 100%;
+  border: 0;
+  vertical-align: middle; }
+
+h1 {
+  font-size: 2.5em; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 1.5em; }
+
+h4 {
+  font-weight: bold;
+  font-size: 1.2em; }
+
+h5 {
+  font-weight: bold;
+  font-size: 1em; }
+
+h6 {
+  font-weight: bold;
+  font-size: 0.9em; }
+
+blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em #eee solid; }
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #eee;
+  margin: 1em 0;
+  padding: 0; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+b {
+  font-weight: bold; }
+
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+ins {
+  background: #ff9;
+  color: black;
+  text-decoration: none; }
+
+mark {
+  background: #ff0;
+  color: black;
+  font-style: italic;
+  font-weight: bold; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+ul {
+  margin: 1em 0;
+  padding: 0 0 0 2em; }
+
+ol {
+  margin: 1em 0;
+  padding: 0 0 0 2em; }
+
+dd {
+  margin: 0 0 0 2em; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td {
+  vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+  body {
+    font-size: 14px; } }
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 16px; } }
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    -webkit-filter: none !important;
+            filter: none !important; }
+
+  body {
+    font-size: 12pt;
+    max-width: 100%; }
+
+  a {
+    text-decoration: underline; }
+    a:visited {
+      text-decoration: underline; }
+
+  hr {
+    height: 1px;
+    border: 0;
+    border-bottom: 1px solid black; }
+
+  pre {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid; }
+
+  blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid; }
+
+  tr {
+    page-break-inside: avoid; }
+
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important; }
+
+  @page {
+    :left {
+      margin: 15mm 20mm 15mm 10mm; }
+
+    :right {
+      margin: 15mm 10mm 15mm 20mm; } }
+  p {
+    orphans: 3;
+    widows: 3; }
+
+  h2 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid; }
+
+  h3 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid; }
+
+  a[href]:after {
+    content: "(" attr(href) ")"; }
+
+  abbr[title]:after {
+    content: "(" attr(title) ")"; }
+
+  .ir a:after {
+    content: ""; }
+
+  a[href^="javascript:"]:after {
+    content: ""; }
+
+  a[href^="#"]:after {
+    content: ""; } }
+li p:last-child {
+  margin: 0; }
+
+</style>
+</head><body>
+<h2 id="画面遷移図">画面遷移図</h2>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="959px" preserveAspectRatio="none" style="width:893px;height:959px;" version="1.1" viewBox="0 0 893 959" width="893px" zoomAndPan="magnify">
+<defs><filter height="300%" id="f1eylh2idp98h8" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[0e3de076b623380506a4e6ad28f1170f]
+cluster 出品者遷移--><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="414" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="379" x="7" y="533"/><rect fill="#FFFFFF" height="380.3906" rx="12.5" ry="12.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="373" x="10" y="563.6094"/><line style="stroke:#A80036;stroke-width:1.5;" x1="7" x2="386" y1="560.6094" y2="560.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="161.5" y="551.5332">出品者遷移</text><!--MD5=[b3c526c123ae36c1c4da247899de1b18]
+cluster 出品者登録遷移--><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="542.5" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="140" x="410" y="200.5"/><rect fill="#FFFFFF" height="508.8906" rx="12.5" ry="12.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="134" x="413" y="231.1094"/><line style="stroke:#A80036;stroke-width:1.5;" x1="410" x2="550" y1="228.1094" y2="228.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="431" y="219.0332">出品者登録遷移</text><ellipse cx="340" cy="589" fill="#000000" filter="url(#f1eylh2idp98h8)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="108" x="262" y="687"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="267" y="712.7285">出品者ログイン</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="66" x="304" y="790"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="309" y="815.7285">注文一覧</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="66" x="304" y="891"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="309" y="916.7285">注文詳細</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="94" x="179" y="569"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="184" y="594.7285">出品者ヘッダ</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="66" x="124" y="687"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="129" y="712.7285">商品一覧</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="66" x="203" y="790"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="208" y="815.7285">商品追加</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="108" x="23" y="790"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="28" y="815.7285">出品者商品詳細</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="66" x="34" y="891"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="39" y="916.7285">商品変更</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="94" x="135" y="891"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="140" y="916.7285">商品削除確認</text><ellipse cx="480" cy="246.5" fill="#000000" filter="url(#f1eylh2idp98h8)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="80" x="440" y="569"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="445" y="594.7285">出品者登録</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="108" x="426" y="687"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="431" y="712.7285">出品者登録完了</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="478.6094" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="315" x="566.5" y="7"/><rect fill="#FFFFFF" height="445" rx="12.5" ry="12.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="309" x="569.5" y="37.6094"/><line style="stroke:#A80036;stroke-width:1.5;" x1="566.5" x2="881.5" y1="34.6094" y2="34.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="696" y="26.5332">注文遷移</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="52" x="630.5" y="102.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="635.5" y="128.3379">ヘッダ</text><ellipse cx="656.5" cy="55.6094" fill="#000000" filter="url(#f1eylh2idp98h8)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;"/><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="66" x="578.5" y="179.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="583.5" y="205.3379">検索結果</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="80" x="662.5" y="179.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="667.5" y="205.3379">カート詳細</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="66" x="594.5" y="273.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="599.5" y="299.3379">商品詳細</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="94" x="687.5" y="350.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="692.5" y="376.3379">注文手続確認</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="66" x="784.5" y="273.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="789.5" y="299.3379">ログイン</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="94" x="687.5" y="427.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="692.5" y="453.3379">支払方法選択</text><rect fill="#FEFECE" filter="url(#f1eylh2idp98h8)" height="40" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="66" x="799.5" y="427.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="804.5" y="453.3379">注文完了</text><!--MD5=[28de21f9df81cc57e8dc12d0d336bb45]
+link *start*注文遷移 to ヘッダ--><path d="M656.5,65.6494 C656.5,73.7994 656.5,86.1694 656.5,97.2094 " fill="none" id="*start*注文遷移-to-ヘッダ" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="656.5,102.4994,660.5,93.4994,656.5,97.4994,652.5,93.4994,656.5,102.4994" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[92627bce066aafb98f6263f1480e3fc6]
+link ヘッダ to 検索結果--><path d="M644.91,142.9194 C639.03,152.7194 631.84,164.7094 625.64,175.0394 " fill="none" id="ヘッダ-to-検索結果" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="623.05,179.3594,631.1104,173.6999,625.6225,175.0719,624.2505,169.584,623.05,179.3594" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e457b58ddc3600d9d51c38fff133f794]
+link ヘッダ to カート詳細--><path d="M668.35,142.9194 C674.36,152.7194 681.71,164.7094 688.05,175.0394 " fill="none" id="ヘッダ-to-カート詳細" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="690.69,179.3594,689.3889,169.5968,688.0735,175.0986,682.5717,173.7832,690.69,179.3594" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9f592fd0c2c184bb943d5723f496c4a0]
+link 検索結果 to 商品詳細--><path d="M614.82,219.6694 C617.28,233.8594 620.67,253.3194 623.32,268.5694 " fill="none" id="検索結果-to-商品詳細" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="624.19,273.5694,626.5888,264.0171,623.3333,268.6433,618.7071,265.3878,624.19,273.5694" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[37cf1e5e9e8ec0a862ffeaff558b5982]
+link カート詳細 to 商品詳細--><path d="M686.96,219.6694 C675.19,234.1094 658.98,253.9994 646.45,269.3694 " fill="none" id="カート詳細-to-商品詳細" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="643.02,273.5694,651.7998,269.1067,646.173,269.6888,645.5909,264.062,643.02,273.5694" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[515e74e4bb513964eb1935b9f33db915]
+link カート詳細 to 注文手続確認--><path d="M701.33,219.7294 C700.44,242.4694 700.48,281.3894 708.5,313.6094 C711.26,324.6894 716.22,336.2494 721.08,345.9694 " fill="none" id="カート詳細-to-注文手続確認" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="723.45,350.5894,722.9024,340.7558,721.1684,346.1403,715.7839,344.4063,723.45,350.5894" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="709.5" y="299.1045">ログイン済</text><!--MD5=[89c76698219ecc5738dbc1f4840d88a4]
+link カート詳細 to ログイン--><path d="M726.33,219.6694 C744.68,234.3494 770.09,254.6794 789.43,270.1494 " fill="none" id="カート詳細-to-ログイン" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="793.7,273.5694,789.1827,264.8176,789.7998,270.4407,784.1768,271.0578,793.7,273.5694" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="770.5" y="252.1045">未ログイン</text><!--MD5=[c84b3ad6ae5751ea76917be6a45232da]
+link ログイン to 注文手続確認--><path d="M796.13,313.9194 C784.99,323.9794 771.31,336.3494 759.67,346.8694 " fill="none" id="ログイン-to-注文手続確認" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="755.8,350.3594,765.159,347.292,759.5094,347.0067,759.7947,341.357,755.8,350.3594" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f66c5e9c324ae99dc7c32d6595c201c6]
+link 注文手続確認 to 支払方法選択--><path d="M728.51,390.9194 C727.65,400.4594 727.52,412.0694 728.13,422.2094 " fill="none" id="注文手続確認-to-支払方法選択" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="728.52,427.3594,731.8139,418.0777,728.1343,422.3743,723.8377,418.6947,728.52,427.3594" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[822409c01a6653c741faf959aba442c6]
+link 支払方法選択 to 注文手続確認--><path d="M740.48,427.3594 C741.35,417.8294 741.48,406.2294 740.87,396.0794 " fill="none" id="支払方法選択-to-注文手続確認" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="740.49,390.9194,737.1697,400.1917,740.8615,395.9056,745.1476,399.5973,740.49,390.9194" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d7759de588317bc8264f4aa9b6eee302]
+link 注文手続確認 to 注文完了--><path d="M759.48,390.7294 C772.85,400.9594 789.37,413.5994 803.32,424.2794 " fill="none" id="注文手続確認-to-注文完了" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="807.56,427.5294,802.8487,418.8805,803.591,424.4884,797.9831,425.2308,807.56,427.5294" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d5e1e59081c5253ae1e42ba4c60cb450]
+link *start*出品者遷移 to 出品者ログイン--><path d="M340.16,599.23 C340.21,612.27 339.58,636.75 335,657 C333.1,665.4 330.02,674.27 326.89,682.12 " fill="none" id="*start*出品者遷移-to-出品者ログイン" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="324.94,686.86,332.0581,680.0532,326.8387,682.2345,324.6573,677.0152,324.94,686.86" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ccb4dcdda0f2ab717ad3583ff6aa06cf]
+link 出品者ログイン to 注文一覧--><path d="M320.05,727.47 C323.44,743.79 328.3,767.15 331.94,784.69 " fill="none" id="出品者ログイン-to-注文一覧" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="333.03,789.93,335.1227,780.306,332.0165,785.0338,327.2887,781.9276,333.03,789.93" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[aefc52d40f7aff14aed8017e93e5cdd3]
+link 注文一覧 to 注文詳細--><path d="M337,830.09 C337,845.98 337,868.69 337,885.84 " fill="none" id="注文一覧-to-注文詳細" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="337,890.97,341,881.97,337,885.97,333,881.97,337,890.97" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b7c3740981757a0b5dd1fe0bc929cf63]
+link 出品者ヘッダ to 注文一覧--><path d="M223.28,609.08 C219.72,641.1 216.91,706.49 245,751 C257.54,770.87 279.63,785.13 299.02,794.54 " fill="none" id="出品者ヘッダ-to-注文一覧" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="303.89,796.82,297.4464,789.3715,299.3649,794.6931,294.0433,796.6116,303.89,796.82" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e54779941e606650494e104d7fe11d87]
+link 出品者ヘッダ to 出品者ログイン--><path d="M233.33,609.03 C239.28,623.09 248.55,642.27 260,657 C267.49,666.64 277.08,675.84 286.2,683.61 " fill="none" id="出品者ヘッダ-to-出品者ログイン" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="290.08,686.85,285.7591,677.9996,286.2506,683.635,280.6152,684.1266,290.08,686.85" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="261" y="653.4951">ログアウト</text><!--MD5=[08755f4116c2d49b7c3f01550ec9d7a1]
+link 出品者ヘッダ to 商品一覧--><path d="M214.61,609.16 C202.67,629.22 183.91,660.77 171.06,682.37 " fill="none" id="出品者ヘッダ-to-商品一覧" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="168.41,686.82,176.4482,681.129,170.9657,682.5225,169.5722,677.04,168.41,686.82" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f338da230bc8c10b2188bf34e8a4332d]
+link 商品一覧 to 商品追加--><path d="M161.92,727.47 C171.96,744.21 190.66,768.36 207.15,786.04 " fill="none" id="商品一覧-to-商品追加" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="210.85,789.93,207.557,780.648,207.4085,786.3029,201.7536,786.1544,210.85,789.93" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9750aa24c1f3c31f6607acc3dff5761d]
+link 商品追加 to 商品一覧--><path d="M231.92,789.93 C222.2,773.31 203.57,749.17 186.89,731.39 " fill="none" id="商品追加-to-商品一覧" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="183.15,727.47,186.4804,736.7387,186.6061,731.0832,192.2616,731.2089,183.15,727.47" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[85964b1c1ea792e1187eb48dcea75262]
+link 商品一覧 to 出品者商品詳細--><path d="M141.58,727.47 C128.43,744.07 109.51,767.96 95.54,785.59 " fill="none" id="商品一覧-to-出品者商品詳細" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="92.11,789.93,100.8436,785.3776,95.223,786.0173,94.5833,780.3967,92.11,789.93" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9d11bc5929af5e294b32b3bb821c7988]
+link 出品者商品詳細 to 商品変更--><path d="M64.76,830.09 C60.21,845.98 57.64,868.69 58.31,885.84 " fill="none" id="出品者商品詳細-to-商品変更" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="58.62,890.97,62.0459,881.7362,58.3054,885.9799,54.0617,882.2395,58.62,890.97" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9e661140334bf1ca47bd5f88d516638d]
+link 商品変更 to 出品者商品詳細--><path d="M79.83,890.97 C84.56,875.1 87.15,852.39 86.35,835.22 " fill="none" id="商品変更-to-出品者商品詳細" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="85.99,830.09,82.6433,839.3528,86.3473,835.0772,90.6228,838.7812,85.99,830.09" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ef62ee7abd0a896eb4bec1a43e39bf48]
+link 出品者商品詳細 to 商品削除確認--><path d="M97.25,830.09 C114.53,846.39 139.43,869.87 157.77,887.16 " fill="none" id="出品者商品詳細-to-商品削除確認" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="161.82,890.97,158.0255,881.8815,158.1857,887.536,152.5311,887.6963,161.82,890.97" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8458630d9e4d60127d1e41306bad5d1d]
+link 商品削除確認 to 商品一覧--><path d="M179.64,890.9 C175.07,853.98 165.03,772.87 160,732.23 " fill="none" id="商品削除確認-to-商品一覧" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="159.35,727,156.4872,736.4236,159.9649,731.962,164.4264,735.4398,159.35,727" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2c2fca2b5803abe3a1860dfa759f07b7]
+link *start*出品者登録遷移 to 出品者登録--><path d="M480,256.61 C480,300.93 480,494.72 480,563.6 " fill="none" id="*start*出品者登録遷移-to-出品者登録" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="480,568.72,484,559.72,480,563.72,476,559.72,480,568.72" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d7d2263e10f31ae91ba865354c990132]
+link 出品者登録 to 出品者登録完了--><path d="M480,609.16 C480,628.97 480,659.98 480,681.55 " fill="none" id="出品者登録-to-出品者登録完了" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="480,686.82,484,677.82,480,681.82,476,677.82,480,686.82" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b1db5ab74ab968aab51d7ba278add8b6]
+reverse link 出品者ログイン to 出品者登録完了--><path d="M375.36,707 C392.22,707 409.07,707 425.92,707 " fill="none" id="出品者ログイン-backto-出品者登録完了" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="370.13,707,379.13,711,375.13,707,379.13,703,370.13,707" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b681db0aacaf1a97e52931f40882ade1]
+@startuml
+hide empty description
+
+state 注文遷移 {
+  state ヘッダ
+  [*] - -> ヘッダ
+  ヘッダ - -> 検索結果
+  ヘッダ - -> カート詳細
+  検索結果 - -> 商品詳細
+  カート詳細 - -> 商品詳細
+  カート詳細 - -> 注文手続確認: ログイン済
+  カート詳細 - -> ログイン: 未ログイン
+  ログイン - -> 注文手続確認
+  注文手続確認 - -> 支払方法選択
+  支払方法選択 - -> 注文手続確認
+  注文手続確認 - -> 注文完了
+}
+
+state 出品者遷移 {
+  [*] - -> 出品者ログイン
+  出品者ログイン - -> 注文一覧
+  注文一覧 - -> 注文詳細
+  出品者ヘッダ - -> 注文一覧
+  出品者ヘッダ - -> 出品者ログイン: ログアウト
+  出品者ヘッダ - -> 商品一覧
+  商品一覧 - -> 商品追加
+  商品追加 - -> 商品一覧
+  商品一覧 - -> 出品者商品詳細
+  出品者商品詳細 - -> 商品変更
+  商品変更 - -> 出品者商品詳細
+  出品者商品詳細 - -> 商品削除確認
+  商品削除確認 - -> 商品一覧
+}
+
+state 出品者登録遷移 {
+  [*] - -> 出品者登録
+  出品者登録 - -> 出品者登録完了
+  出品者登録完了 -left-> 出品者ログイン
+}
+@enduml
+
+PlantUML version 1.2021.4(Sun Apr 04 17:49:39 GMT+09:00 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g>
+</svg>
+<h2 id="クラス図">クラス図</h2>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="641px" preserveAspectRatio="none" style="width:345px;height:641px;" version="1.1" viewBox="0 0 345 641" width="345px" zoomAndPan="magnify">
+<defs><filter height="300%" id="fo5t1n6rhmbwj" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[c2fb96caab64ea7a56b662be458ebfd3]
+class 出品者--><rect codeLine="1" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="117.1797" id="出品者" style="stroke:#A80036;stroke-width:1.5;" width="89" x="7" y="7"/><ellipse cx="31.45" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M34.9656,24.3594 Q34.7469,27.7344 33.6063,28.8594 Q32.6063,29.8594 31.2313,29.8594 Q29.8563,29.8594 28.8563,28.8594 Q27.1219,27.125 27.1219,23.4844 Q27.1219,19.2656 28.9813,17.3906 Q29.9969,16.3906 31.2938,16.3906 Q32.6688,16.3906 33.4813,17.1875 Q34.95,18.6719 34.8875,21.4375 L32.8875,21.4375 Q32.825,19.1563 32.1688,18.5 Q31.8563,18.1719 31.2938,18.1719 Q30.8094,18.1719 30.4188,18.5625 Q29.1688,19.8125 29.1688,23.3594 Q29.1688,26.4375 30.2313,27.4844 Q30.6844,27.9375 31.2313,27.9375 Q31.7156,27.9375 32.1688,27.4844 Q32.7625,26.9063 32.825,24.3594 L34.9656,24.3594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="36" x="47.55" y="27.9102">出品者</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="95" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="13" y="54.4189">出品者ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="13" y="68.2549">メールアドレス</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="13" y="82.0908">出品者名</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="13" y="95.9268">電話番号</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="13" y="109.7627">パスワード</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="95" y1="116.1797" y2="116.1797"/><!--MD5=[f3f3ac258fa4e1f461f5dac7ab946e3c]
+class 商品--><rect codeLine="8" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="103.3438" id="商品" style="stroke:#A80036;stroke-width:1.5;" width="78" x="12.5" y="184"/><ellipse cx="37.4" cy="200" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M40.9156,201.3594 Q40.6969,204.7344 39.5563,205.8594 Q38.5563,206.8594 37.1813,206.8594 Q35.8063,206.8594 34.8063,205.8594 Q33.0719,204.125 33.0719,200.4844 Q33.0719,196.2656 34.9313,194.3906 Q35.9469,193.3906 37.2438,193.3906 Q38.6188,193.3906 39.4313,194.1875 Q40.9,195.6719 40.8375,198.4375 L38.8375,198.4375 Q38.775,196.1563 38.1188,195.5 Q37.8063,195.1719 37.2438,195.1719 Q36.7594,195.1719 36.3688,195.5625 Q35.1188,196.8125 35.1188,200.3594 Q35.1188,203.4375 36.1813,204.4844 Q36.6344,204.9375 37.1813,204.9375 Q37.6656,204.9375 38.1188,204.4844 Q38.7125,203.9063 38.775,201.3594 L40.9156,201.3594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="53.6" y="204.9102">商品</text><line style="stroke:#A80036;stroke-width:1.5;" x1="13.5" x2="89.5" y1="216" y2="216"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="18.5" y="231.4189">出品者ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="18.5" y="245.2549">商品ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="18.5" y="259.0908">商品名</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="18.5" y="272.9268">価格（税込）</text><line style="stroke:#A80036;stroke-width:1.5;" x1="13.5" x2="89.5" y1="279.3438" y2="279.3438"/><!--MD5=[63d527f3fa8c0d8bfae7964548840f7c]
+class 注文者--><rect codeLine="14" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="103.3438" id="注文者" style="stroke:#A80036;stroke-width:1.5;" width="89" x="126" y="184"/><ellipse cx="150.45" cy="200" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M153.9656,201.3594 Q153.7469,204.7344 152.6063,205.8594 Q151.6063,206.8594 150.2313,206.8594 Q148.8563,206.8594 147.8563,205.8594 Q146.1219,204.125 146.1219,200.4844 Q146.1219,196.2656 147.9813,194.3906 Q148.9969,193.3906 150.2938,193.3906 Q151.6688,193.3906 152.4813,194.1875 Q153.95,195.6719 153.8875,198.4375 L151.8875,198.4375 Q151.825,196.1563 151.1688,195.5 Q150.8563,195.1719 150.2938,195.1719 Q149.8094,195.1719 149.4188,195.5625 Q148.1688,196.8125 148.1688,200.3594 Q148.1688,203.4375 149.2313,204.4844 Q149.6844,204.9375 150.2313,204.9375 Q150.7156,204.9375 151.1688,204.4844 Q151.7625,203.9063 151.825,201.3594 L153.9656,201.3594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="36" x="166.55" y="204.9102">注文者</text><line style="stroke:#A80036;stroke-width:1.5;" x1="127" x2="214" y1="216" y2="216"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="132" y="231.4189">注文者ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="132" y="245.2549">メールアドレス</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="132" y="259.0908">注文者名</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="132" y="272.9268">住所</text><line style="stroke:#A80036;stroke-width:1.5;" x1="127" x2="214" y1="279.3438" y2="279.3438"/><!--MD5=[2786efce51c5be585e128506e2bf4fd1]
+class カート--><rect codeLine="20" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="61.8359" id="カート" style="stroke:#A80036;stroke-width:1.5;" width="68" x="250.5" y="204.5"/><ellipse cx="265.5" cy="220.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M269.0156,221.8594 Q268.7969,225.2344 267.6563,226.3594 Q266.6563,227.3594 265.2813,227.3594 Q263.9063,227.3594 262.9063,226.3594 Q261.1719,224.625 261.1719,220.9844 Q261.1719,216.7656 263.0313,214.8906 Q264.0469,213.8906 265.3438,213.8906 Q266.7188,213.8906 267.5313,214.6875 Q269,216.1719 268.9375,218.9375 L266.9375,218.9375 Q266.875,216.6563 266.2188,216 Q265.9063,215.6719 265.3438,215.6719 Q264.8594,215.6719 264.4688,216.0625 Q263.2188,217.3125 263.2188,220.8594 Q263.2188,223.9375 264.2813,224.9844 Q264.7344,225.4375 265.2813,225.4375 Q265.7656,225.4375 266.2188,224.9844 Q266.8125,224.4063 266.875,221.8594 L269.0156,221.8594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="36" x="279.5" y="225.4102">カート</text><line style="stroke:#A80036;stroke-width:1.5;" x1="251.5" x2="317.5" y1="236.5" y2="236.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="256.5" y="251.9189">注文者ID</text><line style="stroke:#A80036;stroke-width:1.5;" x1="251.5" x2="317.5" y1="258.3359" y2="258.3359"/><!--MD5=[607c47d2e52e67d66a9ce429f65b2632]
+class カート商品--><rect codeLine="23" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="75.6719" id="カート商品" style="stroke:#A80036;stroke-width:1.5;" width="92" x="238.5" y="27.5"/><ellipse cx="253.5" cy="43.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M257.0156,44.8594 Q256.7969,48.2344 255.6563,49.3594 Q254.6563,50.3594 253.2813,50.3594 Q251.9063,50.3594 250.9063,49.3594 Q249.1719,47.625 249.1719,43.9844 Q249.1719,39.7656 251.0313,37.8906 Q252.0469,36.8906 253.3438,36.8906 Q254.7188,36.8906 255.5313,37.6875 Q257,39.1719 256.9375,41.9375 L254.9375,41.9375 Q254.875,39.6563 254.2188,39 Q253.9063,38.6719 253.3438,38.6719 Q252.8594,38.6719 252.4688,39.0625 Q251.2188,40.3125 251.2188,43.8594 Q251.2188,46.9375 252.2813,47.9844 Q252.7344,48.4375 253.2813,48.4375 Q253.7656,48.4375 254.2188,47.9844 Q254.8125,47.4063 254.875,44.8594 L257.0156,44.8594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="60" x="267.5" y="48.4102">カート商品</text><line style="stroke:#A80036;stroke-width:1.5;" x1="239.5" x2="329.5" y1="59.5" y2="59.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="244.5" y="74.9189">商品ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="244.5" y="88.7549">個数</text><line style="stroke:#A80036;stroke-width:1.5;" x1="239.5" x2="329.5" y1="95.1719" y2="95.1719"/><!--MD5=[730eebe7647dbd754a69b100681afe07]
+class 注文--><rect codeLine="27" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="103.3438" id="注文" style="stroke:#A80036;stroke-width:1.5;" width="89" x="127" y="347"/><ellipse cx="156.85" cy="363" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M160.3656,364.3594 Q160.1469,367.7344 159.0063,368.8594 Q158.0063,369.8594 156.6313,369.8594 Q155.2563,369.8594 154.2563,368.8594 Q152.5219,367.125 152.5219,363.4844 Q152.5219,359.2656 154.3813,357.3906 Q155.3969,356.3906 156.6938,356.3906 Q158.0688,356.3906 158.8813,357.1875 Q160.35,358.6719 160.2875,361.4375 L158.2875,361.4375 Q158.225,359.1563 157.5688,358.5 Q157.2563,358.1719 156.6938,358.1719 Q156.2094,358.1719 155.8188,358.5625 Q154.5688,359.8125 154.5688,363.3594 Q154.5688,366.4375 155.6313,367.4844 Q156.0844,367.9375 156.6313,367.9375 Q157.1156,367.9375 157.5688,367.4844 Q158.1625,366.9063 158.225,364.3594 L160.3656,364.3594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="174.15" y="367.9102">注文</text><line style="stroke:#A80036;stroke-width:1.5;" x1="128" x2="215" y1="379" y2="379"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="133" y="394.4189">注文ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="133" y="408.2549">注文日</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="133" y="422.0908">注文者ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="133" y="435.9268">注文商品リスト</text><line style="stroke:#A80036;stroke-width:1.5;" x1="128" x2="215" y1="442.3438" y2="442.3438"/><!--MD5=[96f3525c88b4b61ac9cba0359056543f]
+class 注文商品--><rect codeLine="33" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="89.5078" id="注文商品" style="stroke:#A80036;stroke-width:1.5;" width="80" x="11.5" y="353.5"/><ellipse cx="26.5" cy="369.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M30.0156,370.8594 Q29.7969,374.2344 28.6563,375.3594 Q27.6563,376.3594 26.2813,376.3594 Q24.9063,376.3594 23.9063,375.3594 Q22.1719,373.625 22.1719,369.9844 Q22.1719,365.7656 24.0313,363.8906 Q25.0469,362.8906 26.3438,362.8906 Q27.7188,362.8906 28.5313,363.6875 Q30,365.1719 29.9375,367.9375 L27.9375,367.9375 Q27.875,365.6563 27.2188,365 Q26.9063,364.6719 26.3438,364.6719 Q25.8594,364.6719 25.4688,365.0625 Q24.2188,366.3125 24.2188,369.8594 Q24.2188,372.9375 25.2813,373.9844 Q25.7344,374.4375 26.2813,374.4375 Q26.7656,374.4375 27.2188,373.9844 Q27.8125,373.4063 27.875,370.8594 L30.0156,370.8594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="40.5" y="374.4102">注文商品</text><line style="stroke:#A80036;stroke-width:1.5;" x1="12.5" x2="90.5" y1="385.5" y2="385.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="17.5" y="400.9189">注文ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="17.5" y="414.7549">商品ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="17.5" y="428.5908">個数</text><line style="stroke:#A80036;stroke-width:1.5;" x1="12.5" x2="90.5" y1="435.0078" y2="435.0078"/><!--MD5=[d2bd920ff56ed14803ef34819e613fdc]
+class 支払手続--><rect codeLine="38" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="103.3438" id="支払手続" style="stroke:#A80036;stroke-width:1.5;" width="80" x="251.5" y="347"/><ellipse cx="266.5" cy="363" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M270.0156,364.3594 Q269.7969,367.7344 268.6563,368.8594 Q267.6563,369.8594 266.2813,369.8594 Q264.9063,369.8594 263.9063,368.8594 Q262.1719,367.125 262.1719,363.4844 Q262.1719,359.2656 264.0313,357.3906 Q265.0469,356.3906 266.3438,356.3906 Q267.7188,356.3906 268.5313,357.1875 Q270,358.6719 269.9375,361.4375 L267.9375,361.4375 Q267.875,359.1563 267.2188,358.5 Q266.9063,358.1719 266.3438,358.1719 Q265.8594,358.1719 265.4688,358.5625 Q264.2188,359.8125 264.2188,363.3594 Q264.2188,366.4375 265.2813,367.4844 Q265.7344,367.9375 266.2813,367.9375 Q266.7656,367.9375 267.2188,367.4844 Q267.8125,366.9063 267.875,364.3594 L270.0156,364.3594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="280.5" y="367.9102">支払手続</text><line style="stroke:#A80036;stroke-width:1.5;" x1="252.5" x2="330.5" y1="379" y2="379"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="257.5" y="394.4189">注文ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="257.5" y="408.2549">支払手続日</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="257.5" y="422.0908">支払方法ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="257.5" y="435.9268">支払手続結果</text><line style="stroke:#A80036;stroke-width:1.5;" x1="252.5" x2="330.5" y1="442.3438" y2="442.3438"/><!--MD5=[2ad2e09f01b243f3ddfbdfed813ad183]
+class 支払方法--><rect codeLine="44" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="75.6719" id="支払方法" style="stroke:#A80036;stroke-width:1.5;" width="80" x="251.5" y="530.5"/><ellipse cx="266.5" cy="546.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M270.0156,547.8594 Q269.7969,551.2344 268.6563,552.3594 Q267.6563,553.3594 266.2813,553.3594 Q264.9063,553.3594 263.9063,552.3594 Q262.1719,550.625 262.1719,546.9844 Q262.1719,542.7656 264.0313,540.8906 Q265.0469,539.8906 266.3438,539.8906 Q267.7188,539.8906 268.5313,540.6875 Q270,542.1719 269.9375,544.9375 L267.9375,544.9375 Q267.875,542.6563 267.2188,542 Q266.9063,541.6719 266.3438,541.6719 Q265.8594,541.6719 265.4688,542.0625 Q264.2188,543.3125 264.2188,546.8594 Q264.2188,549.9375 265.2813,550.9844 Q265.7344,551.4375 266.2813,551.4375 Q266.7656,551.4375 267.2188,550.9844 Q267.8125,550.4063 267.875,547.8594 L270.0156,547.8594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="280.5" y="551.4102">支払方法</text><line style="stroke:#A80036;stroke-width:1.5;" x1="252.5" x2="330.5" y1="562.5" y2="562.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="257.5" y="577.9189">支払方法ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="257.5" y="591.7549">支払方法名</text><line style="stroke:#A80036;stroke-width:1.5;" x1="252.5" x2="330.5" y1="598.1719" y2="598.1719"/><!--MD5=[4afbe571f230f523bcaaa7f506e178a5]
+class 発送--><rect codeLine="48" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="117.1797" id="発送" style="stroke:#A80036;stroke-width:1.5;" width="65" x="139" y="510"/><ellipse cx="158.05" cy="526" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M161.5656,527.3594 Q161.3469,530.7344 160.2063,531.8594 Q159.2063,532.8594 157.8313,532.8594 Q156.4563,532.8594 155.4563,531.8594 Q153.7219,530.125 153.7219,526.4844 Q153.7219,522.2656 155.5813,520.3906 Q156.5969,519.3906 157.8938,519.3906 Q159.2688,519.3906 160.0813,520.1875 Q161.55,521.6719 161.4875,524.4375 L159.4875,524.4375 Q159.425,522.1563 158.7688,521.5 Q158.4563,521.1719 157.8938,521.1719 Q157.4094,521.1719 157.0188,521.5625 Q155.7688,522.8125 155.7688,526.3594 Q155.7688,529.4375 156.8313,530.4844 Q157.2844,530.9375 157.8313,530.9375 Q158.3156,530.9375 158.7688,530.4844 Q159.3625,529.9063 159.425,527.3594 L161.5656,527.3594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="172.95" y="530.9102">発送</text><line style="stroke:#A80036;stroke-width:1.5;" x1="140" x2="203" y1="542" y2="542"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="145" y="557.4189">発送ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="145" y="571.2549">注文ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="145" y="585.0908">商品ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="145" y="598.9268">発送日</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="145" y="612.7627">発送方法ID</text><line style="stroke:#A80036;stroke-width:1.5;" x1="140" x2="203" y1="619.1797" y2="619.1797"/><!--MD5=[11168dc00cfe907c17c9b86d908becc8]
+class 発送方法--><rect codeLine="55" fill="#FEFECE" filter="url(#fo5t1n6rhmbwj)" height="75.6719" id="発送方法" style="stroke:#A80036;stroke-width:1.5;" width="80" x="23.5" y="530.5"/><ellipse cx="38.5" cy="546.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M42.0156,547.8594 Q41.7969,551.2344 40.6563,552.3594 Q39.6563,553.3594 38.2813,553.3594 Q36.9063,553.3594 35.9063,552.3594 Q34.1719,550.625 34.1719,546.9844 Q34.1719,542.7656 36.0313,540.8906 Q37.0469,539.8906 38.3438,539.8906 Q39.7188,539.8906 40.5313,540.6875 Q42,542.1719 41.9375,544.9375 L39.9375,544.9375 Q39.875,542.6563 39.2188,542 Q38.9063,541.6719 38.3438,541.6719 Q37.8594,541.6719 37.4688,542.0625 Q36.2188,543.3125 36.2188,546.8594 Q36.2188,549.9375 37.2813,550.9844 Q37.7344,551.4375 38.2813,551.4375 Q38.7656,551.4375 39.2188,550.9844 Q39.8125,550.4063 39.875,547.8594 L42.0156,547.8594 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="52.5" y="551.4102">発送方法</text><line style="stroke:#A80036;stroke-width:1.5;" x1="24.5" x2="102.5" y1="562.5" y2="562.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="29.5" y="577.9189">発送方法ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="29.5" y="591.7549">発送方法名</text><line style="stroke:#A80036;stroke-width:1.5;" x1="24.5" x2="102.5" y1="598.1719" y2="598.1719"/><!--MD5=[92647ea11487a86910473ea4f304b626]
+link 出品者 to 商品--><path codeLine="60" d="M51.5,124.32 C51.5,143.68 51.5,165.1 51.5,183.87 " fill="none" id="出品者-商品" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ada7665e478f7f6231761518228c4ce4]
+link 注文者 to 注文--><path codeLine="61" d="M170.82,287.44 C170.93,306.42 171.07,327.94 171.19,346.89 " fill="none" id="注文者-注文" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e4d9e6ffb6fcb08472b1c0b73f456256]
+link 注文商品 to 注文--><path codeLine="62" d="M91.81,398.5 C103.54,398.5 115.26,398.5 126.99,398.5 " fill="none" id="注文商品-注文" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d76a4aa84cf276207829a6618e0e48ed]
+link 商品 to 注文商品--><path codeLine="63" d="M51.5,287.44 C51.5,308.63 51.5,332.99 51.5,353.4 " fill="none" id="商品-注文商品" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2efda5812399be3dc34ddb359214b949]
+link 注文 to 発送--><path codeLine="64" d="M171.5,450.36 C171.5,469.1 171.5,490.45 171.5,509.75 " fill="none" id="注文-発送" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[99400c070a719eccb7209846f6eac1b1]
+link 注文 to 支払手続--><path codeLine="65" d="M216.03,398.5 C227.82,398.5 239.62,398.5 251.41,398.5 " fill="none" id="注文-支払手続" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e7e9db637dcc3ba6cfb9b2e6948a113a]
+link 注文者 to カート--><path codeLine="66" d="M215.03,235.5 C226.79,235.5 238.55,235.5 250.31,235.5 " fill="none" id="注文者-カート" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0b845c89aec9d6e6436ba9a35aff838a]
+link カート to 注文--><path codeLine="67" d="M263.25,266.78 C247.45,289.28 225.55,320.49 207.1,346.78 " fill="none" id="カート-注文" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7ca72a676c895741d7fe6726f1e427cd]
+link カート商品 to カート--><path codeLine="68" d="M284.5,103.78 C284.5,134.04 284.5,176.16 284.5,204.32 " fill="none" id="カート商品-カート" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ca04b2ccdb622f92a0ca4c84f91935ad]
+link 支払手続 to 支払方法--><path codeLine="69" d="M291.5,450.36 C291.5,476.15 291.5,506.89 291.5,530.42 " fill="none" id="支払手続-支払方法" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c3c4b6d8571822bbdf1e8c6f6b35c605]
+link 発送方法 to 発送--><path codeLine="70" d="M103.58,568.5 C115.34,568.5 127.1,568.5 138.87,568.5 " fill="none" id="発送方法-発送" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[909a3a791ba2f5c200784a0a9b1736dd]
+@startuml
+class 出品者 {
+  出品者ID
+  メールアドレス
+  出品者名
+  電話番号
+  パスワード
+}
+class 商品 {
+  出品者ID
+  商品ID
+  商品名
+  価格（税込）
+}
+class 注文者 {
+  注文者ID
+  メールアドレス
+  注文者名
+  住所
+}
+class カート {
+  注文者ID
+}
+class カート商品 {
+  商品ID
+  個数
+}
+class 注文 {
+  注文ID
+  注文日
+  注文者ID
+  注文商品リスト
+}
+class 注文商品 {
+  注文ID
+  商品ID
+  個数
+}
+class 支払手続 {
+  注文ID
+  支払手続日
+  支払方法ID
+  支払手続結果
+}
+class 支払方法 {
+  支払方法ID
+  支払方法名
+}
+class 発送 {
+  発送ID
+  注文ID
+  商品ID
+  発送日
+  発送方法ID
+}
+class 発送方法 {
+  発送方法ID
+  発送方法名
+}
+
+出品者  - -  商品
+注文者 - - 注文
+注文 -left- 注文商品
+商品 - - 注文商品
+注文 - - 発送
+注文 -right- 支払手続
+カート -left- 注文者
+カート -right- 注文
+カート -up- カート商品
+支払手続 - - 支払方法
+発送 -left- 発送方法
+@enduml
+
+PlantUML version 1.2021.4(Sun Apr 04 17:49:39 GMT+09:00 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g>
+</svg>
+<h2 id="出品者">出品者</h2>
+<ul>
+<li>ショッピングサイトに商品を出品することができる。</li>
+<li>出品者はメールアドレスを元に識別し、重複登録は認めない。</li>
+<li>事前に出品者登録をする必要がある。</li>
+</ul>
+<h2 id="商品">商品</h2>
+<ul>
+<li>商品の出品は出品者のみが行える。</li>
+<li>出品者は商品の追加、変更、削除をすることができる。</li>
+<li>出品者は他の出品者として商品を出品することはできない。また他の出品者が追加した商品の変更、削除することはできない。</li>
+<li>商品の管理は出品者専用画面から行う。出品者専用画面へは出品者のログイン画面から認証することで遷移することができる。</li>
+</ul>
+<h2 id="注文者">注文者</h2>
+<ul>
+<li>注文者は商品を注文することができる。</li>
+<li>注文者は商品を注文するとき、事前に注文者登録をする必要がある。</li>
+<li>ただし商品の検索、閲覧は注文者登録前であっても可能とする。</li>
+</ul>
+<h2 id="注文">注文</h2>
+<ul>
+<li>注文者が出品者に対して商品の発送を依頼すること。</li>
+<li>注文するために、注文者はカートに商品を入れておく必要がある。</li>
+<li>注文を完了するためには、注文者は支払手続きを完了させる必要がある。</li>
+<li>注文が完了した場合、注文者と出品者の両方にメールを送信する。</li>
+</ul>
+<h2 id="カート">カート</h2>
+<ul>
+<li>注文するためには商品をカートに入れる必要がある。</li>
+<li>カートは注文者が個々に管理し、カートへの商品追加、カート内の商品削除が自由に行える。</li>
+<li>一定時間放置されたカート内の商品は解放され、カートの中身は空になる。</li>
+<li>カート内の商品は画面遷移に伴い削除されることはない。</li>
+</ul>
+<h2 id="注文商品">注文商品</h2>
+<ul>
+<li>注文者が注文した商品。</li>
+<li>注文者は注文した商品の履歴を閲覧することができる。</li>
+</ul>
+<h2 id="支払手続">支払手続</h2>
+<h2 id="発送">発送</h2>
+<ul>
+<li>注文をもとに出品者は商品を発送する。</li>
+<li>発送は支払手続きが完了している必要がある。</li>
+<li>発送が完了した場合、注文者にメールを送信する。</li>
+</ul>
+
+</body></html>
