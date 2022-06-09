@@ -26,11 +26,11 @@ public class SecurityConfig {
             .formLogin(login -> login
                         .loginPage("/seller/login")
                         .successForwardUrl("/seller/login"))
+            .logout().logoutUrl("/seller/logout").logoutSuccessUrl("/seller/login").permitAll()
+            .and()
             .userDetailsService(userDetailService)
             .authorizeHttpRequests()
-            .antMatchers("/seller/login", "/seller/register").permitAll()
-            .antMatchers("/css/*").permitAll()
-            .antMatchers("/img/*").permitAll()
+            .antMatchers("/seller/register", "/css/*").permitAll()
             .anyRequest().authenticated();
         return http.build();
     }

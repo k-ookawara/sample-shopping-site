@@ -12,6 +12,11 @@
 <title>出品者ログイン</title>
 </head>
 <body>
+    <nav class="navbar navbar-dark" style="background: #2e3740">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" th:href="@{/seller/order-list}">SAUNZON</a>
+         </div>
+    </nav>
     <div class="container">
         <h4>出品者ログイン</h4>
         <form action="#" th:action="@{/seller/login}" method="post" th:object="${login}">

@@ -12,6 +12,29 @@
 <title>注文一覧</title>
 </head>
 <body>
+    <nav class="navbar navbar-dark" style="background: #2e3740">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" th:href="@{/seller/order-list}">SAUNZON</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/seller/order-list">注文一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/seller/order-list">商品一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <form name="logout" method="post" th:action="@{/seller/logout}">
+                            <a class="nav-link" href="javascript:logout.submit()">ログアウト</a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <h4>注文一覧</h4>
         <div th:if="${orders.isEmpty()}" class="alert alert-primary" role="alert">
