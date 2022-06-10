@@ -11,6 +11,8 @@ zipファイルをダウンロードするか、リポジトリをフォーク�
 + Java17
 + SpringBoot
 + MySQL
++ MyBatis
++ Thymeleaf
 
 # 開発環境の構築手順
 

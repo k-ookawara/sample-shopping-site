@@ -1,5 +1,11 @@
 # アプリの動作確認
 
+1. `Project Explorer`から`application.properties`を開きます。（もしエラーで開けなかった場合[Appendix](./appendix.md)を参照）
+![picture 81](images2/1ebf2ee418a3ea3ed61ad7ebf915fd49430fe5e56ea756752a5b51efb304dd15.png)  
+
+1. `spring.datasource.password`にMySQL環境構築時に設定したパスワードを入力し保存。
+![picture 82](images2/3c54fd424ba0ae862802e37f8c6f709f532c5f904c8efa64f7f2643d8654068a.png)  
+
 1. 画面上部のBoot Dashboardのアイコンをクリック。
 ![picture 53](images2/de4086d4e8770c5ed20719b7811b8c912800045b0fcfd1c777eb410ed8fd26be.png)  
 
