@@ -13,7 +13,7 @@ import com.example.demo.model.Seller;
 public interface SellerMapper {
 
     @Insert("""
-            insert into seller
+            insert into sellers
             (
                 email_address,
                 seller_name,
@@ -29,7 +29,7 @@ public interface SellerMapper {
     int insert(Seller seller);
 
     @Select("""
-            select * from seller where email_address = #{emailAddress}
+            select * from sellers where email_address = #{emailAddress}
             """)
     Seller findByEmailAddress(String emailAddress);
 }
