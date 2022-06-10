@@ -1,5 +1,15 @@
 # Eclipseの環境構築
 
+### 目次
++ [Eclipse IDEのインストール](#eclipse-ideのインストール)
++ [Java環境変数の設定](#java環境変数の設定)
++ [プラグインのインストール](#プラグインのインストール)
++ [各種設定](#各種設定)
++ [サンプルコードの準備](#サンプルコードの準備)
++ [Eclipseにインポート](Eclipseにインポート)
+
+---
+
 ### Eclipse IDEのインストール
 
 1. [ダウンロードサイト(https://www.eclipse.org/downloads/)](https://www.eclipse.org/downloads/)へアクセス。
@@ -44,7 +54,7 @@
 
 1. 変数名に`JAVA_HOME`、変数値にはJavaのホームフォルダパスを入力。
 参考パス：  
-`C:\Users\{自分のユーザ}\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416\jre`
+`C:\Users\{自分のユーザ名}\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416\jre`
 (x86_64_17.0.3.v20220515-1416)の部分は適宜変更される可能性あり。エクスプローラーから実フォルダがあるか確認が必要)
 ![picture 76](images2/e6b1a6fc476984b476b02cc9a6ea20157b95778da5d8d5c3b6ab9a3cadc7b0d2.png)  
 実フォルダを確認。
