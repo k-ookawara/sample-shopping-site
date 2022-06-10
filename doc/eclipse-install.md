@@ -1,4 +1,4 @@
-# Eclipaseの環境構築
+# Eclipseの環境構築
 
 ### Eclipse IDEのインストール
 
@@ -16,8 +16,14 @@
 1. `Eclipse IDE for Enterprise Java and Web Developer`を選択。 
 ![picture 7](images/6c0924017f20270ea2cf600699ea9bf04f8ed52bea6fb8c97743529ee5e2e094.png)  
 
+1. `java 11+VM`の右側にあるフォルダアイコンをクリック。
+![picture 14](images/f444186731d44da1daee0b3d656cbd4010881e381811450f2c339ef22657986b.png)
+
+1. JRE 17.0.1を選択してOKをクリック。
+![picture 4](images/e8e426fa859759277f4fd89396d29918fe9374203d032e4128755665e4c2f9ea.png)  
+
 1. `INSTALL`をクリック。
-![picture 14](images/f444186731d44da1daee0b3d656cbd4010881e381811450f2c339ef22657986b.png)  
+![picture 5](images/13f7e87f1997702515c0d6cfe528240acc8e8cd4c7e95233107160862ac1cb50.png)  
 
 1. インストール完了したら`LAUNCH`をクリックして起動。
 ![picture 15](images/3927c0c103408c766864bcb8780621a4baf65d9a53d20fbffd6e40491f01eb73.png)  
@@ -47,6 +53,19 @@
 
 1. 再起動を求められるので、再起動したらインストール完了。
 ![picture 19](images/e8336aa9d9b06a2499e32ca79efcdde40a588ee7eaa5518ce20f2ca123515879.png)  
+
+1. [https://projectlombok.org/download]にアクセスして画面中央のDownloadをクリック。  
+ダウンロードが完了したらjarファイルを開く。
+![picture 12](images/ac71a82392d25e97340053e38f7f00ea03fa1e85e94672552c871b1724e33a2f.png)  
+
+1. チェックボックスにチェックを入れてInstall／Updateをクリック。
+![picture 14](images/072c1e765cface0ef6d884f682ef7511747ed6c965deb594fc45e8c26fdfb3fd.png)  
+
+1. もしこのウィンドウがでたら、左下のSpecify locationをクリック。
+![picture 13](images/4d9d1bffdf5f468c779ceffca11b2316d7ad56de640c0fa05dc64d45a31fd7a8.png)  
+
+1. インストールしたeclipse.exeを選択してから、Install/Updateをクリック。
+![picture 15](images/02efa782597c3fa9b9e0f2601bfe5557c134280fd5e2c935fc4eddccd933366f.png)  
 
 ### 各種設定
 1. メニューバーから`Window`->`Preferences`をクリック。
@@ -95,5 +114,35 @@
 
 1. 左側リストの`Java Build Path`を選択。`Java Build Path`の`Libraries`タブをクリック。`Modulepath`->`JRE System Library`を選択した状態でEditをクリック。
 
-1. 
+1. `Installed JREs`をクリック。
 ![picture 53](images/dace31cff544efc9f287813a35ca6afa415787689733bc1edb6aa876377e08c1.png)  
+
+1. ADDをクリック。
+![picture 1](images/95dcf6fc3a26116f4bc0a655a23a166333eb4fc46ee7c6c08ed01f0c88fa90a5.png)  
+
+1. `Standard VM`を選択してNextをクリック。
+![picture 2](images/8caabc5b81883fb2591f03ab5ad1a20ccb029a0488d2ce7ecc2d9caed5d398f7.png)  
+
+1. `Directory`をクリック。
+![picture 7](images/374c26958b5f49b995f9a256e830bca4b827eba1672878ad0a42570f84dc5bc9.png)  
+
+
+1. JDK17のホームフォルダを選択して、右下のフォルダーの選択をクリック。
+![picture 6](images/5e9b56af32a0f65e31203d21f60350986b7ba8deb9cfab452187ea157e9ad38a.png)  
+
+1. `JRE name`に任意の名前を入力して、Finishを入力。
+![picture 3](images/bbf9db2803286440468c43b334f92870bc04cb704dcdb0fda76b50ad07af7a2a.png)  
+
+1. 追加したJREにチェックを入れて`Apply and Close`をクリック。 
+![picture 8](images/0ed406e29864b48c712140c464acedfc848f13d8f081f2e02cd590a1790082cb.png)  
+
+1. Finishをクリック。 
+![picture 9](images/661516f47cfa407f8456d3c028422343fc03cfdb8b8c472bb7908f082d0af203.png)  
+
+1. `Project exploer`の`sample-shopping-site`を右クリック。下部の`Configure`->`Add Gradle Nature`をクリック。
+![picture 11](images/83f542b8e95adcba4c10ae95a84bf2b3690e809bec5ef2c5a5aad69ee817d144.png)  
+
+1. 左側Project Exploerを見てエラー（×マーク）が消えていることを確認。
+![picture 52](images2/34320534c77e90d4a12488de1e69182bfa6fb5f7cc8fb397bce9c2c66a8186e3.png)
+
+ここまででEclipseの環境構築が完了です。

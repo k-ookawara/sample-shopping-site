@@ -18,3 +18,5 @@ zipファイルをダウンロードするか、リポジトリをフォーク�
 + [SourceTreeのインストール](doc/sourcetee-install.md)
 + [Eclipseの環境構築](doc/eclipse-install.md)
 + [MySQLの環境構築](doc/mysql-install.md)
++ [アプリの動作確認](doc/application-run.md)
++ [Appendix(困ったとき用)](doc/appendix.md)
