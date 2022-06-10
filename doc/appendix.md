@@ -2,11 +2,11 @@
 
 ### 目次
 
-+ [application.propertiesを開いたときにエラーが発生したときの対処](#application.propertiesを開いたときにエラーが発生したときの対処)
++ [application.propertiesを開いたときにエラーが発生した場合の対処](#application.propertiesを開いたときにエラーが発生した場合の対処)
 
 ---
 
-### application.propertiesを開いたときにエラーが発生したときの対処
+### application.propertiesを開いたときにエラーが発生した場合の対処
 
 ![picture 57](images2/917ad685344b0ffbb9c42e62d240d1202cd401e40b551a622b28a255481160b7.png)  
 
