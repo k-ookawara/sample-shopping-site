@@ -31,6 +31,40 @@
 1. これも`LAUNCH`をクリックして起動。
 ![picture 16](images/9e67cd1e75aa96d571c4a1a9bba099bef535e13f591a28d72ffdd2d97e92e580.png)  
 
+### Java環境変数の設定
+
+1. `Windowsキー + R`で`ファイル名を指定して実行`を表示。`SystemPropertiesAdvanced.exe`を入力してOKをクリック。
+![picture 71](images2/42a9525093c4ce0b0c9e83544c6ae2c52fab78360ca43d3d4e154db2697befbf.png)  
+
+1. 下部の環境変数をクリック。
+![picture 72](images2/1d1b2ac2482bc811057275ea1f14f540e2ecf273fd9272b907dee195f844bbd6.png)  
+
+1. ユーザ環境変数の新規をクリック。 
+![picture 75](images2/7f467ac82d8ee8aa4201ad50ef4f79d2fcbbeda076832767ad3bd6dd238628ac.png)  
+
+1. 変数名に`JAVA_HOME`、変数値にはJavaのホームフォルダパスを入力。
+参考パス：  
+`C:\Users\{自分のユーザ}\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.3.v20220515-1416\jre`
+(x86_64_17.0.3.v20220515-1416)の部分は適宜変更される可能性あり。エクスプローラーから実フォルダがあるか確認が必要)
+![picture 76](images2/e6b1a6fc476984b476b02cc9a6ea20157b95778da5d8d5c3b6ab9a3cadc7b0d2.png)  
+実フォルダを確認。
+![picture 77](images2/3a6a99be855638f5839310b97b572abd714ffa4c57ce70f14b2571259bc7bb94.png)  
+
+1. OKボタンをクリック。
+![picture 78](images2/85beb300a5ccb37c71c5732ae04aa4df285e83d1c2959a8e7516a3b299a132a8.png)  
+
+1. ユーザ環境変数にPathがなければ`新規`、あればPATHを選択した状態で`編集`をクリック。
+![picture 73](images2/b116465b8e2f42e2b8fd3a9480358d7addad69feed51ed3387c20df0470d5de3.png)  
+
+1. 新規ボタンをクリックして`%JAVA_HOME\bin%`を入力。OKボタンをクリック。
+![picture 74](images2/262b475c4659abdce47d2ded16eafd12c4726bfaeeba3277f58a3beca5a137f4.png)  
+
+1. OKボタンをクリック。
+![picture 79](images2/50c2a0f6284fdc2a58ed224bb95a814ea4882a737356a7c372c4a622cbe21ad9.png)  
+
+1. OKボタンをクリック。
+![picture 80](images2/e315d419e21956e5716789e8452d154a4c0b13bc7378a4c8a67034d4b3c5ed76.png)  
+
 ### プラグインのインストール
 
 1. メニューバーの`Help`-> `Eclipse Marketplace`をクリック 
