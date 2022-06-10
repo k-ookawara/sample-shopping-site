@@ -55,10 +55,19 @@
 ![picture 19](images/e8336aa9d9b06a2499e32ca79efcdde40a588ee7eaa5518ce20f2ca123515879.png)  
 
 1. [https://projectlombok.org/download]にアクセスして画面中央のDownloadをクリック。  
-ダウンロードが完了したらjarファイルを開く。
 ![picture 12](images/ac71a82392d25e97340053e38f7f00ea03fa1e85e94672552c871b1724e33a2f.png)  
 
-1. チェックボックスにチェックを入れてInstall／Updateをクリック。
+1. ダウンロードが完了したらエクスプローラでダウンロードフォルダに移動。
+![picture 68](images2/fd013b6f459c53eb336ebb0b12af85dee6ec27d92f8ed2937debf556287b7e64.png)  
+
+1. ファイルパスのところにcmdを入力してコマンドプロントを起動。
+![picture 69](images2/845080bfccab3757895cc7fc348be185271bbaee8741953be6db9fee94817c79.png)  
+
+1. 以下のコマンドを実行。  
+`java -jar lombok.jar`
+![picture 70](images2/b7eab52d1c900a8563fa00875c15f95fac35a08aecfbe1a6f73d0343adf28c50.png)  
+
+1. Lombokのインストーラ画面が表示。チェックボックスにチェックを入れてInstall／Updateをクリック。
 ![picture 14](images/072c1e765cface0ef6d884f682ef7511747ed6c965deb594fc45e8c26fdfb3fd.png)  
 
 1. もしこのウィンドウがでたら、左下のSpecify locationをクリック。

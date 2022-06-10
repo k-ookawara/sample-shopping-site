@@ -20,3 +20,7 @@ zipファイルをダウンロードするか、リポジトリをフォーク�
 + [MySQLの環境構築](doc/mysql-install.md)
 + [アプリの動作確認](doc/application-run.md)
 + [Appendix(困ったとき用)](doc/appendix.md)
+
+# サンプルショッピングサイトの概要
+[ショッピングサイト概要](doc/ショッピングサイト概要.md)を参照してください。  
+（作成中）
