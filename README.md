@@ -2,10 +2,6 @@
 
 研修用ショッピングサイトのひな形です。
 
-# 使い方
-
-zipファイルをダウンロードするか、リポジトリをフォークして使用してください。
-
 # 使用言語および関連技術
 
 + Java17
@@ -22,8 +18,8 @@ zipファイルをダウンロードするか、リポジトリをフォーク�
 + [Eclipseの環境構築](./doc/eclipse-install.md)
 + [MySQLの環境構築](./doc/mysql-install.md)
 + [アプリの動作確認](./doc/application-run.md)
++ [DBViewerのインストールと設定](./doc/dbviewer.md)
 + [Appendix](./doc/appendix.md)
 
 # サンプルショッピングサイトの概要
-[ショッピングサイト概要](./doc/consept.md)を参照してください。  
-（作成中）
+[ショッピングサイト概要](./doc/consept.md)を参照してください。

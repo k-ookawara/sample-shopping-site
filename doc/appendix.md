@@ -1,14 +1,14 @@
 # Appendix
 
-### 目次
+# 目次
 
-+ [application.propertiesを開いたときにエラーが発生した場合の対処](#application.propertiesを開いたときにエラーが発生した場合の対処)
++ [application.propertiesを開いたときにエラーが発生した場合の対処](#applicationpropertiesを開いたときにエラーが発生した場合の対処)
 
-+ [EclipseでMarkdown、UMLを書くための準備](#EclipseでMarkdown、UMLを書くための準備)
++ [EclipseでMarkdown、UMLを書くための準備](#eclipseでmarkdownumlを書くための準備)
 
 ---
 
-### application.propertiesを開いたときにエラーが発生した場合の対処
+# application.propertiesを開いたときにエラーが発生した場合の対処
 
 ![picture 57](images2/917ad685344b0ffbb9c42e62d240d1202cd401e40b551a622b28a255481160b7.png)  
 
@@ -40,7 +40,7 @@
 
 ---
 
-### EclipseでMarkdown、UMLを書くための準備
+# EclipseでMarkdown、UMLを書くための準備
 
 1. `Help`->`Eclipse Marketplace`をクリック。
 ![picture 4](images2/f994c6f456473e34d7dd03aeac301b61bb653575ee0f7aaf940744c4dd00383e.png)  
