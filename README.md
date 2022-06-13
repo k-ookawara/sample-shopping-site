@@ -9,10 +9,11 @@ zipファイルをダウンロードするか、リポジトリをフォーク�
 # 使用言語および関連技術
 
 + Java17
-+ SpringBoot
-+ MySQL
-+ MyBatis
-+ Thymeleaf
++ [SpringBoot](https://spring.io/)
++ [MySQL](https://www.mysql.com/jp/)
++ [MyBatis](https://mybatis.org/mybatis-3/ja/index.html)
++ [Thymeleaf](https://www.thymeleaf.org/)
++ [Bootstrap](https://getbootstrap.jp/)
 
 # 開発環境の構築手順
 
@@ -21,7 +22,7 @@ zipファイルをダウンロードするか、リポジトリをフォーク�
 + [Eclipseの環境構築](./doc/eclipse-install.md)
 + [MySQLの環境構築](./doc/mysql-install.md)
 + [アプリの動作確認](./doc/application-run.md)
-+ [Appendix(困ったとき用)](./doc/appendix.md)
++ [Appendix](./doc/appendix.md)
 
 # サンプルショッピングサイトの概要
 [ショッピングサイト概要](./doc/consept.md)を参照してください。  
