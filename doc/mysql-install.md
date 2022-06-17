@@ -83,7 +83,7 @@
 1. パスワードを入力してOKをクリック。
 ![picture 50](images2/28d95fa05ee098c49e0cc36c0b2859aef7e27e45717a569889fc243878cd21e5.png)  
 
-1. [ddl.sql](../ddl/ddl.sql)のSQLをMySQL Workbench中央のQuery 1に貼り付けて、上から順番にSQLを実行。
+1. [ddl.sql](../ddl/ddl.sql)のSQLをMySQL Workbench中央のQuery 1に貼り付けて、上から順番にSQLを実行。赤枠のアイコンでキーボードカーソル上のSQLが実行できる。
 ![picture 51](images2/1b6b488fdb2e18151b105edfc61db12854ebaf340df25224c50250d97b2d9f93.png)  
 
 ここまででMySQL構築手順が完了です。
