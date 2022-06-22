@@ -18,7 +18,7 @@
 + [Eclipseの環境構築](./doc/eclipse-install.md)
 + [MySQLの環境構築](./doc/mysql-install.md)
 + [アプリの動作確認](./doc/application-run.md)
-+ [DBViewerのインストールと設定](./doc/dbviewer.md)
++ [DBeaverのインストールと設定](./doc/dbeaver-install.md)
 + [Appendix](./doc/appendix.md)
 
 # サンプルショッピングサイトの概要
